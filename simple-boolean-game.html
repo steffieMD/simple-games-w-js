@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors Game</p>
+    <button
+      onclick="
+    userChoice = 'Rock'
+    
+
+    let computerRandom = Math.floor(Math.random() * 3);
+      let computerChoice = '';
+      if (computerRandom == 0) {
+        computerChoice = 'Rock';
+      } else if (computerRandom == 1) {
+        computerChoice = 'Paper';
+      } else {
+        computerChoice = 'Scissors';
+      }
+
+      const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
+      
+    if (computerChoice == 'Rock'){
+        alert(`${message} \n Tie!`)
+    }
+    else if (computerChoice == 'Paper'){
+        alert(`${message} \n You lose!`)
+    } else{
+        alert(`${message} \n You win!`)
+    }
+    "
+    >
+      Rock
+    </button>
+    <button
+      onclick="
+    userChoice = 'Paper'
+    let computerRandom = Math.floor(Math.random() * 3);
+      let computerChoice = '';
+      if (computerRandom == 0) {
+        computerChoice = 'Rock';
+      } else if (computerRandom == 1) {
+        computerChoice = 'Paper';
+      } else {
+        computerChoice = 'Scissors';
+      }
+
+    const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
+
+    if (computerChoice == 'Paper'){
+        alert(`${message} \n Tie!`)
+    }
+    else if (computerChoice == 'Scissors'){
+        alert(`${message} \n You lose!`)
+    } else{
+        alert(`${message} \n You win!`)
+    }
+    "
+    >
+      Paper
+    </button>
+    <button
+      onclick="
+    userChoice = 'Scissors'
+    let computerRandom = Math.floor(Math.random() * 3);
+      let computerChoice = '';
+      if (computerRandom == 0) {
+        computerChoice = 'Rock';
+      } else if (computerRandom == 1) {
+        computerChoice = 'Paper';
+      } else {
+        computerChoice = 'Scissors';
+      }
+
+    const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
+
+    if (computerChoice == 'Scissors'){
+        alert(`${message} \n Tie!`)
+    }
+    else if (computerChoice == 'Rock'){
+        alert(`${message} \n You lose!`)
+    } else{
+        alert(`${message} \n You win!`)
+    }
+    "
+    >
+      Scissors
+    </button>
+    <script>
+      let userChoice = "";
+      //   let computerRandom = Math.floor(Math.random() * 3);
+      //   let computerChoice = "";
+      //   if (computerRandom == 0) {
+      //     computerChoice = "Rock";
+      //   } else if (computerRandom == 1) {
+      //     computerChoice = "Paper";
+      //   } else {
+      //     computerChoice = "Scissors";
+      //   }
+    </script>
+  </body>
+</html>
