@@ -10,8 +10,8 @@
     <button
       onclick="
     userChoice = 'Rock'
-
-      pickComputerMove()
+let computerChoice = pickComputerMove();
+      // pickComputerMove()
       const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
       
     if (computerChoice == 'Rock'){
@@ -29,8 +29,8 @@
     <button
       onclick="
     userChoice = 'Paper'
-
-      pickComputerMove()
+let computerChoice = pickComputerMove();
+      // pickComputerMove()
     const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
 
     if (computerChoice == 'Paper'){
@@ -49,7 +49,8 @@
       onclick="
     userChoice = 'Scissors'
 
-    pickComputerMove()
+      let computerChoice = pickComputerMove();
+    // pickComputerMove()
 
     const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
 
@@ -68,9 +69,11 @@
     <script>
       let userChoice = "";
 
-      let computerChoice = "";
+      // global scope vs return function
+      // let computerChoice = "";
 
       function pickComputerMove() {
+        let computerChoice = "";
         let computerRandom = Math.floor(Math.random() * 3);
 
         if (computerRandom == 0) {
@@ -80,6 +83,8 @@
         } else {
           computerChoice = "Scissors";
         }
+
+        return computerChoice
       }
     </script>
   </body>
