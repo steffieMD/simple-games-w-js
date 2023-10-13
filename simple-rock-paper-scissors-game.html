@@ -6,22 +6,12 @@
     <title>Booleans</title>
   </head>
   <body>
-    <p>Rock Paper Scissors Game</p>
+    <p>Rock Paper Scissors</p>
     <button
       onclick="
     userChoice = 'Rock'
-    
 
-    let computerRandom = Math.floor(Math.random() * 3);
-      let computerChoice = '';
-      if (computerRandom == 0) {
-        computerChoice = 'Rock';
-      } else if (computerRandom == 1) {
-        computerChoice = 'Paper';
-      } else {
-        computerChoice = 'Scissors';
-      }
-
+      pickComputerMove()
       const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
       
     if (computerChoice == 'Rock'){
@@ -39,16 +29,8 @@
     <button
       onclick="
     userChoice = 'Paper'
-    let computerRandom = Math.floor(Math.random() * 3);
-      let computerChoice = '';
-      if (computerRandom == 0) {
-        computerChoice = 'Rock';
-      } else if (computerRandom == 1) {
-        computerChoice = 'Paper';
-      } else {
-        computerChoice = 'Scissors';
-      }
 
+      pickComputerMove()
     const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
 
     if (computerChoice == 'Paper'){
@@ -66,15 +48,8 @@
     <button
       onclick="
     userChoice = 'Scissors'
-    let computerRandom = Math.floor(Math.random() * 3);
-      let computerChoice = '';
-      if (computerRandom == 0) {
-        computerChoice = 'Rock';
-      } else if (computerRandom == 1) {
-        computerChoice = 'Paper';
-      } else {
-        computerChoice = 'Scissors';
-      }
+
+    pickComputerMove()
 
     const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
 
@@ -92,15 +67,20 @@
     </button>
     <script>
       let userChoice = "";
-      //   let computerRandom = Math.floor(Math.random() * 3);
-      //   let computerChoice = "";
-      //   if (computerRandom == 0) {
-      //     computerChoice = "Rock";
-      //   } else if (computerRandom == 1) {
-      //     computerChoice = "Paper";
-      //   } else {
-      //     computerChoice = "Scissors";
-      //   }
+
+      let computerChoice = "";
+
+      function pickComputerMove() {
+        let computerRandom = Math.floor(Math.random() * 3);
+
+        if (computerRandom == 0) {
+          computerChoice = "Rock";
+        } else if (computerRandom == 1) {
+          computerChoice = "Paper";
+        } else {
+          computerChoice = "Scissors";
+        }
+      }
     </script>
   </body>
 </html>
