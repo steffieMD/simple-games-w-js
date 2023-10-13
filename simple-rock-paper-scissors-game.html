@@ -7,73 +7,13 @@
   </head>
   <body>
     <p>Rock Paper Scissors</p>
-    <button
-      onclick="
-    userChoice = 'Rock'
-let computerChoice = pickComputerMove();
-      // pickComputerMove()
-      const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
-      
-    if (computerChoice == 'Rock'){
-        alert(`${message} \n Tie!`)
-    }
-    else if (computerChoice == 'Paper'){
-        alert(`${message} \n You lose!`)
-    } else{
-        alert(`${message} \n You win!`)
-    }
-    "
-    >
-      Rock
-    </button>
-    <button
-      onclick="
-    userChoice = 'Paper'
-let computerChoice = pickComputerMove();
-      // pickComputerMove()
-    const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
-
-    if (computerChoice == 'Paper'){
-        alert(`${message} \n Tie!`)
-    }
-    else if (computerChoice == 'Scissors'){
-        alert(`${message} \n You lose!`)
-    } else{
-        alert(`${message} \n You win!`)
-    }
-    "
-    >
-      Paper
-    </button>
-    <button
-      onclick="
-    userChoice = 'Scissors'
-
-      let computerChoice = pickComputerMove();
-    // pickComputerMove()
-
-    const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice} `
-
-    if (computerChoice == 'Scissors'){
-        alert(`${message} \n Tie!`)
-    }
-    else if (computerChoice == 'Rock'){
-        alert(`${message} \n You lose!`)
-    } else{
-        alert(`${message} \n You win!`)
-    }
-    "
-    >
-      Scissors
-    </button>
+    <button onclick="playGame('Rock')">Rock</button>
+    <button onclick="playGame('Paper')">Paper</button>
+    <button onclick="playGame('Scissors')">Scissors</button>
     <script>
-      let userChoice = "";
-
-      // global scope vs return function
-      // let computerChoice = "";
-
       function pickComputerMove() {
         let computerChoice = "";
+
         let computerRandom = Math.floor(Math.random() * 3);
 
         if (computerRandom == 0) {
@@ -84,7 +24,39 @@ let computerChoice = pickComputerMove();
           computerChoice = "Scissors";
         }
 
-        return computerChoice
+        return computerChoice;
+      }
+
+      function playGame(userChoice) {
+        const computerChoice = pickComputerMove();
+
+        const message = `You picked: ${userChoice} \nComputer picked: ${computerChoice}`;
+
+        if (userChoice === "Rock") {
+          if (computerChoice == "Rock") {
+            alert(`${message} \n Tie!`);
+          } else if (computerChoice == "Paper") {
+            alert(`${message} \n You lose!`);
+          } else if (computerChoice == "Scissors") {
+            alert(`${message} \n You win!`);
+          }
+        } else if (userChoice === "Paper") {
+          if (computerChoice == "Rock") {
+            alert(`${message} \n You win!`);
+          } else if (computerChoice == "Paper") {
+            alert(`${message} \n Tie!`);
+          } else if (computerChoice == "Scissors") {
+            alert(`${message} \n You lose!`);
+          }
+        } else if (userChoice === "Scissors") {
+          if (computerChoice == "Rock") {
+            alert(`${message} \n You lose!`);
+          } else if (computerChoice == "Paper") {
+            alert(`${message} \n You win!`);
+          } else if (computerChoice == "Scissors") {
+            alert(`${message} \n Tie!`);
+          }
+        }
       }
     </script>
   </body>
