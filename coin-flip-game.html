@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 6 Excercises - Booleans and If Statements</title>
+  </head>
+  <body>
+    <script>
+      // create random number
+      let randomNumber = Math.random();
+
+      // state heads or tails using if statement
+      if (randomNumber < 0.5) {
+        console.log("heads");
+      } else {
+        console.log("tails");
+      }
+
+      // state heads or tails using ternary operator
+      let result = randomNumber < 0.5 ? "heads" : "tails";
+
+      // create user's choice
+      let guess = "heads";
+
+      guess === result ? console.log("You win!") : console.log("You lose!");
+    </script>
+  </body>
+</html>
