@@ -3,28 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Booleans</title>
+    <title>Rock Paper Scissors Project</title>
   </head>
   <body>
     <p>Rock Paper Scissors</p>
     <button onclick="playGame('Rock')">Rock</button>
     <button onclick="playGame('Paper')">Paper</button>
     <button onclick="playGame('Scissors')">Scissors</button>
+    <p class="js-result"></p>
+    <p class="js-game"></p>
+    <p class="js-score"></p>
     <button
       onclick="
     score.losses = 0;
     score.wins = 0;
     score.ties = 0;
-    alert(`GAME RESET! \nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
-    console.log(score)
+    // alert(`GAME RESET! \nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+    localStorage.removeItem('score')
+    document.querySelector(
+      '.js-score'
+      ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    
     "
     >
       Reset Score
     </button>
-    <p>Computer Move:</p>
-    <p class="computerMove"></p>
     <script>
-      const score = {
+      // The score is saved and called even when we refresh the page
+      let score = JSON.parse(localStorage.getItem("score")) || {
         wins: 0,
         losses: 0,
         ties: 0,
@@ -45,6 +51,9 @@
 
         return computerChoice;
       }
+
+      // This will load our score from local storage and convert it back into a js object
+      console.log(JSON.parse(localStorage.getItem("score")));
 
       function playGame(userChoice) {
         const computerChoice = pickComputerMove();
@@ -88,13 +97,22 @@
           score.wins += 1;
           console.log(score);
         }
-        alert(
-          `${message} \n${result} \nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
-        );
-        console.log(score);
-      }
 
-      document.querySelector(".computerMove").innerHTML = pickComputerMove();
+        // This will save the score to local storage and convert it into a JSON object
+        localStorage.setItem("score", JSON.stringify(score));
+
+        console.log(score);
+
+        document.querySelector(".js-result").innerHTML = result;
+
+        document.querySelector(
+          ".js-game"
+        ).innerHTML = `You ${userChoice} - ${pickComputerMove()} Computer`;
+
+        document.querySelector(
+          ".js-score"
+        ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+      }
     </script>
   </body>
 </html>
