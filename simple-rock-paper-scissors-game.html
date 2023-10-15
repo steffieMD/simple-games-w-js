@@ -20,9 +20,10 @@
     score.ties = 0;
     // alert(`GAME RESET! \nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
     localStorage.removeItem('score')
-    document.querySelector(
-      '.js-score'
-      ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    // document.querySelector(
+    //   '.js-score'
+    //   ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    scoreBoardUpdate()
     
     "
     >
@@ -109,10 +110,18 @@
           ".js-game"
         ).innerHTML = `You ${userChoice} - ${pickComputerMove()} Computer`;
 
+        // document.querySelector(
+        //   ".js-score"
+        // ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+
+        scoreBoardUpdate();
+      }
+
+      const scoreBoardUpdate = () => {
         document.querySelector(
           ".js-score"
         ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
-      }
+      };
     </script>
   </body>
 </html>
